@@ -1,13 +1,13 @@
 import {prop, getModelForClass} from '@typegoose/typegoose'
 
 class userClient {
-    @prop()
+    @prop({required: true})
     firstName: string
-    @prop()
+    @prop({required: true})
     lastName: string
-    @prop()
+    @prop({required: true, trim: true})
     email: string
-    @prop()
+    @prop({required: true, minlength: 8})
     password: string
     @prop()
     birthDate: string

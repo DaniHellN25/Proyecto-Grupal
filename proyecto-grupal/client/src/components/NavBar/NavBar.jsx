@@ -218,7 +218,9 @@ const MobileNav = () => {
       display={{ md: "none" }}
     >
       {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
+        <Link to={navItem.href}>
+          <MobileNavItem key={navItem.label} {...navItem} />
+        </Link>
       ))}
     </Stack>
   );
@@ -279,10 +281,10 @@ const MobileNavItem = ({ label, children, href }) => {
 const NAV_ITEMS = [
   {
     label: "Psicologos",
-    href: "psicologos",
+    href: "/home",
   },
   {
     label: "Blog",
-    href: "blog",
+    href: "/blog",
   },
 ];

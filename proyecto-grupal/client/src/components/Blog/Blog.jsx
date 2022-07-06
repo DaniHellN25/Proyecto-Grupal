@@ -52,6 +52,10 @@ export default function Blog() {
     }
   }, [dispatch, adminSearchbar])
 
+  const breakpoints = {
+    sm: '700px',
+  }
+
   return (
     <Stack minHeight='100%' maxHeight='fit-content' justify='space-between'>
       <Stack>
@@ -68,9 +72,9 @@ export default function Blog() {
               Notas sobre psicología
             </Text>
 
-            <Stack direction='row' width='50%' justify='right'>
+            <Stack direction='row' width={{ sm:'100%', md:'50%' }} justify='right'>
               <SearchBar width='50%' />
-              <Button variant='outline' width='40%' colorScheme='teal' onClick={(e) => handleSubmit(e)}>
+              <Button variant='outline' width='40%' colorScheme='teal' overflow='hidden' onClick={(e) => handleSubmit(e)}>
                 Todas las notas
               </Button>
               {

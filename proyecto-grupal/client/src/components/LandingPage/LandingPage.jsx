@@ -36,8 +36,8 @@ function LandingPage() {
                 transition={{ duration: 1.3 }}
                 animate={{
                   opacity: 1
-                }}>
-                <Container maxW={'8xl'} bgColor={'#E2E8F0'}>
+                }}>                                  
+                <Container maxW={'8xl'} bgColor={'#E2E8F0'}> 
                   <Stack
                     align={'center'}
                     spacing={{ base: 8, md: 10 }}

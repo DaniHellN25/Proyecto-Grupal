@@ -16,6 +16,8 @@ import { Box, Badge, Avatar, Stack, Text } from "@chakra-ui/react";
 import { ArrowLeftIcon } from '@chakra-ui/icons';
 import Loader from "../../Loader/Loader.jsx";
 
+const baseURL = process.env.REACT_APP_API;
+
 export default function PostsDetail() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -55,7 +57,7 @@ export default function PostsDetail() {
                 <div className="psyinfo">
                   <Link to={`/detailPsychologist/${post.idUserPsychologist._id}`}>
                     <Avatar
-                      src={post.idUserPsychologist.profileImage}
+                      src={`${baseURL}/${post.idUserPsychologist.profileImage}`}
                       alt="img not found"
                       mr='0.5em'
                     />

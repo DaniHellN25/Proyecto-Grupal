@@ -25,13 +25,14 @@ export default function Post({ allPosts }) {
   return (
     <>
       <div className="postContainer">
-        <SimpleGrid columns={3} spacing={10}>
+        {/* <SimpleGrid columns={3} spacing={10}> */}
+        <SimpleGrid columns={[1, 2, 3]} spacing='10px'>
           {showPostPage &&
             showPostPage.map((post) => {
               let postDate = post.createdAt
               postDate = new Date(postDate)            
               return (
-                <Box>
+                <Box width='22em'>
                   <Link to={`/postdetail/${post._id}`}>
                     <div className="card" key={post._id}>
                       <div className="imgen">

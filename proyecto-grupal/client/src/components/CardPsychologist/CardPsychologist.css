@@ -115,3 +115,29 @@
     0%  {transform: scale(0);}
     100% {transform: scale(100%);}
   }
+
+
+  @media (max-width: 700px) {
+    .cardPsychologistContainer {
+        flex-direction: column;
+        padding-right: 0.5em;
+        padding-left: 0.5em;
+    }
+    .containerBottom {
+        flex-direction: row;
+        width: 100%;
+    }
+    .ProfileBox {
+        width: 100%;
+        margin-top: 0.5em;   
+    }
+    .About {
+        width: 100%;
+        margin-top: 0.2em;
+        height: 5em;
+        justify-content: start;
+    }
+    .about {
+        width: 100%;
+    }    
+}

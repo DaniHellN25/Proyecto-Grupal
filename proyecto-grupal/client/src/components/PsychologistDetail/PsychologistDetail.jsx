@@ -23,6 +23,8 @@ import NotFound from '../404notFound/notFound.jsx';
 import Map from '../Map/Map.jsx';
 import Schedule from "../Schedule/Schedule";
 
+const baseURL = process.env.REACT_APP_API;
+
 
 export default function PsychologistDetail() {
 
@@ -101,7 +103,7 @@ export default function PsychologistDetail() {
                                 <SimpleGrid columns={1} textAlign='center' spacingX="10" spacingY="20px">
                                   <Flex direction='row' className="BoxDetail" borderRadius={'10px'} p='1em' width='100%' height='fit-content' justify='space-around' align='center'>
                                     <Box className="BoxDetailImage" backgroundColor={'transparent'} height="15em" width='15em'>
-                                      <Avatar src={detail.profileImage} size='full' />
+                                      <Avatar src={`${baseURL}/${detail.profileImage}`} size='full' />
                                     </Box>
                                     <Stack direction='column' width='65%'>
                                       <Text fontSize='4xl' pb='0.5em'>{`${detail.firstName} ${detail.lastName}`}</Text>

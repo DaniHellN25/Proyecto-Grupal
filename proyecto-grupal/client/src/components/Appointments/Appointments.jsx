@@ -25,6 +25,8 @@ import Swal from 'sweetalert2';
 import { FaLaptop, FaUserFriends } from "react-icons/fa";
 import Reviews from "../Reviews/Reviews";
 
+const baseURL = process.env.REACT_APP_API;
+
 
 function Appointments() {
   const dispatch = useDispatch();
@@ -156,7 +158,7 @@ function Appointments() {
                                 tokenClient && appo.IdUserPsychologist
                                   ? (<Stack align='center' width='50%' borderRightWidth='0.1em' borderColor='#b7b7b7'>
                                     <Link to={`/detailPsychologist/${appo.IdUserPsychologist._id}`} cursor='pointer'>
-                                      <Avatar src={appo.IdUserPsychologist.profileImage} size='xl' />
+                                      <Avatar src={`${baseURL}/${appo.IdUserPsychologist.profileImage}`} size='xl' />
                                       <Text fontSize='3xl' fontWeight='500'>{appo.IdUserPsychologist.firstName} {appo.IdUserPsychologist.lastName}</Text>
                                     </Link>
                                     <Text fontSize='2xl' color='gray'>{appo.IdUserPsychologist.email}</Text>

@@ -90,6 +90,9 @@ export default function Home() {
     setPage(1)
   }
 
+  const breakpoints = {
+    sm: '700px',
+  }
 
   return (
     <Stack minHeight='100%' maxHeight='fit-content' justify='space-between'>
@@ -98,11 +101,11 @@ export default function Home() {
           tokenClient || tokenPsychologist ? <NavbarHome /> : <NavBar />
         }
         <div className="cardContainer">
-          <Stack
+          <Stack          
             mt="1em"
             mb="1em"
             width="100%"
-            direction="row"
+            direction={{ sm:"column", md: 'row'}}
             justifyContent="space-between"
             align='center'
           >
@@ -110,9 +113,9 @@ export default function Home() {
               Psicólogos
             </Text>
 
-            <Stack direction='row' width='50%' justify='right'>
+            <Stack direction='row' width={{ sm:'100%', md:'50%' }} justify='right'>
               <AdminSearchbar width='50%' />
-              <Button variant='outline' width='40%' colorScheme='teal' onClick={handleSubmit}>
+              <Button variant='outline' width='40%' colorScheme='teal' overflow='hidden' onClick={handleSubmit}>
                 Todos los psicólogos
               </Button>
             </Stack>

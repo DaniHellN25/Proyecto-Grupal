@@ -6,6 +6,8 @@ import Starts from '../Starts/Starts';
 import Schedule from "../Schedule/Schedule";
 import { useDispatch } from "react-redux";
 
+const baseURL = process.env.REACT_APP_API;
+
 export default function CardPsychologist({ firstName, lastName, Specialties, profileImage, rating, education, about, IdUserPsychologist }) {
 
     const navigate = useNavigate();
@@ -28,7 +30,7 @@ export default function CardPsychologist({ firstName, lastName, Specialties, pro
             <Stack className="ProfileBox">
                 <Link to={`/detailPsychologist/${IdUserPsychologist}`}>
                     <Stack direction='column' align='center' cursor='pointer'>
-                        <Avatar className="avatar" src={profileImage} alt="img not found" size='2xl' />
+                        <Avatar className="avatar" src={`${baseURL}/${profileImage}`} alt="img not found" size='2xl' />
                         <Text as='ins' color='blackAlpha.700' textAlign='center' fontWeight='bold' className="name">{`${firstName} ${lastName}`}</Text>
                     </Stack>
                 </Link>

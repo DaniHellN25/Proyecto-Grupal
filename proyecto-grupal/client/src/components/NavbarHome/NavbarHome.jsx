@@ -24,6 +24,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserClient, getUserPsychologistOne } from "../../redux/actions";
 import { useEffect } from "react";
 
+const baseURL = process.env.REACT_APP_API;
+
 function removeAcc(str) {
   const acentos = {
     á: "a",
@@ -174,13 +176,14 @@ export default function NavbarHome() {
                   (
                     <Avatar
                       size={"sm"}
-                      src={clientDetails?.profileImage}
+                      src={`${baseURL}/${clientDetails?.profileImage}`}
                     />)
                   :
                   (
                     <Avatar
                       size={"sm"}
-                      src={userPsichologistDetail?.profileImage} />
+                      src={`${baseURL}/${userPsichologistDetail?.profileImage}`}
+                      />
                   )
                 }
               </MenuButton>

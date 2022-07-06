@@ -39,6 +39,8 @@ import {
  import NotFound from '../404notFound/notFound.jsx';
 import Footer from '../Footer/Footer'
 import NavbarHome from "../NavbarHome/NavbarHome";
+
+const baseURL = process.env.REACT_APP_API;
  
  
  export default function PsychologistProfile() {
@@ -86,7 +88,7 @@ import NavbarHome from "../NavbarHome/NavbarHome";
                            justifyContent={'center'}
                          >
                       <VStack>
-                           <Avatar size={"2xl"} src={psychologistDetails.profileImage} alt={psychologistDetails.firstName} mb={4} />
+                           <Avatar size={"2xl"} src={`${baseURL}/${psychologistDetails.profileImage}`} alt={psychologistDetails.firstName} mb={4} />
                            <HStack justifyContent={'center'}>
                              <ChangePasswordModal mr={'5px'}/>
                            </HStack>
